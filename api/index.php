@@ -21,6 +21,12 @@ if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php'))
     require $maintenance;
 }
 
+// Force debug mode to see the hidden 500 error on Vercel
+putenv('APP_DEBUG=true');
+putenv('APP_ENV=local');
+$_ENV['APP_DEBUG'] = 'true';
+$_ENV['APP_ENV'] = 'local';
+
 require __DIR__.'/../vendor/autoload.php';
 
 /** @var Application $app */
