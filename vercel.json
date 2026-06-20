@@ -9,8 +9,7 @@
     },
     "routes": [
         {
-            "src": "/(css|js|images|fonts|build)/(.*)",
-            "dest": "/public/$1/$2"
+            "handle": "filesystem"
         },
         {
             "src": "/(.*)",
